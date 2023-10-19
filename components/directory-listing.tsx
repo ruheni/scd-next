@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import prisma from '@/lib/prisma';
-import AudioPlayerSmall from "./audioplayer/AudioPlayerSmall";
+// import AudioPlayerSmall from "../Audioplayer/AudioPlayerSmall";
 
 class DirectoryListing extends React.Component<any, any> {
   getlistingList() {
@@ -18,16 +18,19 @@ class DirectoryListing extends React.Component<any, any> {
     return listingList;
   }
 
+
+// export default async function DirectoryListing() {
+    
+    // const directoryList = await prisma.directory.findMany()
+
 render() {
         const listingList = this.getlistingList();
 
 return (
       
       <div className="directory-list">
-        {listingList.map((listing: { website: any; title: string; episodeURL: any; episodePromo: any; color: any; }) => (
-          <React.Fragment
-          key={listing.title}
-          >
+        {listingList.map((listing: { website: any; title: string; episodePromo: any; color: any; }) => (
+          <React.Fragment>
             {/* 
             Have a class added for each tag that's present. 
             Add an additional a:hover class for each that changes its own display.
@@ -43,6 +46,7 @@ return (
               <a 
                 href={`${listing.website}?seattle-creative-directory`} 
                 target="_blank"
+                key={listing.title}
                 // onClick={e => {
                 //   trackCustomEvent({
                 //     category: "Directory",
@@ -58,10 +62,10 @@ return (
               <div className={`episodePromo ${listing.color}`}>{listing.episodePromo && listing.episodePromo}</div> : '' 
               }
 
-              {listing.episodeURL ? 
+              {/* {listing.episodeURL ? 
               <AudioPlayerSmall 
-              episodeURL={listing.episodeURL && listing.episodeURL} /> : '' 
-              }
+                podcastURL={listing.episodeURL && listing.episodeURL} /> : '' 
+              } */}
 
               {/* <listingTags tags={listing.tags} /> */}
               {/* include social handle, make a new component */}

@@ -8,9 +8,8 @@
     }
 
     h5 {
-        font: var(--text-mono--item) !important;
+        font: var(--text-mono--item);
         margin-block-start: 0;
-        margin-bottom: 2em !important;
     }
     
     /* BACKGROUND PATTERN */
@@ -217,7 +216,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column: span 3;
-        text-transform: lowercase;
     }
 
 
